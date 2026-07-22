@@ -533,6 +533,40 @@ html[data-theme="dark"] .perspective-controls,html[data-theme="dark"] .skill-gro
 html[data-theme="dark"] .btn-secondary{background:#141e2b;border-color:#3a4960}
 </style>
 
+
+<style id="navigation-width-fix">
+/* Navigation is intentionally narrower than the main content. */
+:root{--nav-max:1120px}
+html,body{width:100%;max-width:100%;overflow-x:clip}
+header{width:100%;max-width:100%;overflow:visible}
+header .container,
+.nav.container{
+  width:min(var(--nav-max),calc(100% - (var(--page-gutter) * 2)));
+  max-width:var(--nav-max);
+  margin-inline:auto;
+}
+.nav{
+  min-width:0;
+}
+.brand{min-width:0;flex:0 1 auto}
+.brand span:last-child{min-width:0}
+.nav-links{min-width:0}
+.nav-controls{flex:0 0 auto}
+main,section{max-width:100%;overflow-x:clip}
+
+@media (max-width:1180px){
+  :root{--nav-max:calc(100% - 52px)}
+  header .container,.nav.container{width:var(--nav-max);max-width:none}
+}
+@media (max-width:820px){
+  :root{--nav-max:calc(100% - 28px)}
+  header .container,.nav.container{width:var(--nav-max)}
+}
+@media (max-width:560px){
+  :root{--nav-max:calc(100% - 20px)}
+}
+</style>
+
 </head>
 <body>
 <div class="noise"></div>
