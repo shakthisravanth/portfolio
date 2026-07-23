@@ -16,7 +16,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f5f2ea">
-<title>J Shakthi Sravanth | Backend Engineer & Technical Trainer</title>
+<title>J Shakthi Sravanth | Technical Trainer & Software Engineer</title>
 <meta name="description" content="J Shakthi Sravanth builds reliable Java backend systems and makes complex technology simple for thousands of learners.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,7 +123,12 @@ h2{font-size:clamp(38px,5vw,64px)}
 .step{min-height:270px;border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:25px;background:rgba(255,255,255,.035);transition:.25s;position:relative;overflow:hidden}
 .step:hover{transform:translateY(-6px);background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.28)}
 .step-num{font:700 11px var(--mono);color:#ff9f73}
-.step-icon{font:800 42px var(--display);margin:28px 0 42px;color:white}
+.step-icon{width:58px;height:58px;margin:28px 0 42px;border:1px solid rgba(255,255,255,.16);border-radius:16px;display:grid;place-items:center;background:rgba(255,255,255,.055);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.07)}
+.step-icon svg{width:29px;height:29px;display:block;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.process .step:nth-child(1) .step-icon{color:#7dd3fc;background:rgba(56,189,248,.09);border-color:rgba(125,211,252,.28)}
+.process .step:nth-child(2) .step-icon{color:#fbbf24;background:rgba(251,191,36,.09);border-color:rgba(251,191,36,.28)}
+.process .step:nth-child(3) .step-icon{color:#fb923c;background:rgba(251,146,60,.09);border-color:rgba(251,146,60,.28)}
+.process .step:nth-child(4) .step-icon{color:#5eead4;background:rgba(94,234,212,.09);border-color:rgba(94,234,212,.28)}
 .step h3{font-size:21px;letter-spacing:-.03em;margin-bottom:10px}.step p{color:#aab2c2;font-size:14px;margin:0}
 
 /* Perspectives */
@@ -239,7 +244,8 @@ footer{padding:35px 0 55px;color:var(--muted);font:700 11px var(--mono);border-t
   .process:after{font-size:92px;right:-12px;bottom:-25px}
   .process-grid{grid-template-columns:1fr;gap:10px}
   .step{min-height:0;padding:21px;border-radius:18px}
-  .step-icon{font-size:34px;margin:20px 0 24px}
+  .step-icon{width:52px;height:52px;margin:20px 0 24px}
+  .step-icon svg{width:26px;height:26px}
   .step h3{font-size:20px}
 
   .perspective-controls{position:relative;width:100%;padding:4px;border-radius:13px;margin-bottom:18px}
@@ -567,6 +573,236 @@ main,section{max-width:100%;overflow-x:clip}
 }
 </style>
 
+
+<style id="impact-frame-fix">
+/* Keep the impact statistics inside the same visual frame as the portfolio. */
+.impact-strip{
+  width:min(1180px,calc(100% - (var(--page-gutter) * 2)));
+  margin:0 auto;
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  background:var(--paper-2);
+}
+.impact-strip>.container{
+  width:100%;
+  max-width:none;
+  margin:0;
+}
+.impact-grid{width:100%;}
+.impact:first-child{border-left:0;}
+
+@media (max-width:820px){
+  .impact-strip{
+    width:calc(100% - (var(--page-gutter) * 2));
+    border-radius:18px;
+  }
+}
+@media (max-width:560px){
+  .impact-strip{border-radius:15px;}
+}
+html[data-theme="dark"] .impact-strip{
+  background:#111a27;
+  border-color:#334158;
+}
+</style>
+
+
+<style id="mobile-diagram-preserve-layout">
+/* Preserve the desktop Code-to-Clarity composition on phones.
+   The earlier mobile rules stacked every item vertically; this override keeps
+   the same visual story while using percentage-based positions. */
+@media (max-width: 560px){
+  .clarity-board{
+    padding:7px;
+    border-radius:18px;
+    overflow:hidden;
+  }
+  .board-top{
+    padding:4px 5px 9px;
+  }
+  .board-title{
+    font-size:8px;
+    letter-spacing:.035em;
+  }
+  .board-icons span{
+    width:7px;
+    height:7px;
+  }
+  .board-canvas{
+    display:block !important;
+    position:relative !important;
+    min-height:0 !important;
+    height:auto !important;
+    aspect-ratio:1.24 / 1;
+    padding:0 !important;
+    overflow:hidden !important;
+    border-radius:14px;
+    background-size:17px 17px;
+  }
+  .board-canvas .flow-node,
+  .board-canvas .sticky,
+  .board-canvas .code-strip{
+    position:absolute !important;
+    width:auto !important;
+    inset:auto !important;
+    margin:0 !important;
+  }
+  .board-canvas .flow-node{
+    padding:9px 9px;
+    border-radius:10px;
+    font-size:7.6px;
+    line-height:1.25;
+    box-shadow:3px 3px 0 var(--ink);
+    transform:none !important;
+    white-space:nowrap;
+  }
+  .board-canvas .flow-node small{
+    margin-top:3px;
+    font-size:7px;
+    line-height:1.25;
+    white-space:normal;
+  }
+  .board-canvas .node-a{
+    top:5.5% !important;
+    left:4.5% !important;
+    width:58% !important;
+    transform:rotate(-1.2deg) !important;
+  }
+  .board-canvas .node-b{
+    top:39% !important;
+    right:3.8% !important;
+    width:50% !important;
+    box-shadow:3px 3px 0 var(--blue);
+    transform:rotate(1deg) !important;
+  }
+  .board-canvas .node-c{
+    left:4.5% !important;
+    bottom:5.5% !important;
+    width:53% !important;
+    box-shadow:3px 3px 0 var(--orange);
+    transform:rotate(-.6deg) !important;
+  }
+  .board-canvas .sticky{
+    top:31% !important;
+    left:8.5% !important;
+    width:39% !important;
+    padding:10px 9px;
+    font-size:12px;
+    line-height:1.12;
+    box-shadow:4px 5px 0 rgba(17,24,39,.16);
+    transform:rotate(-3deg) !important;
+    z-index:4;
+  }
+  .board-canvas .sticky span{
+    margin-top:7px;
+    font-size:6.8px;
+    line-height:1.2;
+  }
+  .board-canvas .code-strip{
+    display:block !important;
+    right:4% !important;
+    bottom:4.5% !important;
+    width:38% !important;
+    padding:8px 9px;
+    border-radius:9px;
+    font-size:6.5px;
+    line-height:1.55;
+    transform:rotate(1.2deg) !important;
+    z-index:3;
+  }
+  .board-canvas .connector{
+    display:block !important;
+    position:absolute !important;
+    z-index:1;
+  }
+  .board-canvas .connector.one{
+    left:39% !important;
+    top:18% !important;
+    width:28% !important;
+    height:26% !important;
+    border-width:0;
+    border-top:2px dashed var(--blue);
+    border-right:2px dashed var(--blue);
+    border-radius:0 34px 0 0;
+  }
+  .board-canvas .connector.two{
+    right:29% !important;
+    top:53% !important;
+    width:26% !important;
+    height:29% !important;
+    border-width:0;
+    border-bottom:2px dashed var(--orange);
+    border-left:2px dashed var(--orange);
+    border-radius:0 0 0 34px;
+  }
+}
+
+@media (max-width: 380px){
+  .board-canvas{aspect-ratio:1.13 / 1}
+  .board-canvas .flow-node{font-size:7px;padding:8px}
+  .board-canvas .flow-node small{font-size:6.4px}
+  .board-canvas .sticky{font-size:10.5px;padding:9px 8px}
+  .board-canvas .sticky span{font-size:6.2px}
+  .board-canvas .code-strip{font-size:5.9px;padding:7px 8px}
+}
+</style>
+
+
+<style id="training-card-contrast-fix">
+/* Training cards live on the light page surface, so they need their own
+   palette. The generic .step styling is reserved visually for the dark
+   signature-method section. */
+#training .step{
+  background:var(--white);
+  border-color:var(--line);
+  color:var(--ink);
+  box-shadow:0 14px 34px rgba(17,24,39,.06);
+}
+#training .step:hover{
+  background:var(--white);
+  border-color:color-mix(in srgb,var(--blue) 45%,var(--line));
+  box-shadow:0 20px 44px rgba(17,24,39,.10);
+}
+#training .step-icon{color:var(--ink);}
+#training .step h3{color:var(--ink);}
+#training .step p{color:var(--muted);}
+#training .step:nth-child(2) .step-icon{color:var(--blue);}
+#training .step:nth-child(3) .step-icon{color:var(--orange);}
+#training .step:nth-child(4) .step-icon{color:var(--green);}
+
+/* Keep the signature-method section intentionally dark. */
+.process .step{
+  background:rgba(255,255,255,.035);
+  border-color:rgba(255,255,255,.13);
+  color:#fff;
+  box-shadow:none;
+}
+.process .step-icon,.process .step h3{color:#fff;}
+.process .step p{color:#aab2c2;}
+
+html[data-theme="dark"] #training .step{
+  background:#141e2b;
+  border-color:#344158;
+  color:#f4f7fc;
+  box-shadow:0 16px 38px rgba(0,0,0,.22);
+}
+html[data-theme="dark"] #training .step:hover{
+  background:#192536;
+  border-color:#52627a;
+}
+html[data-theme="dark"] #training .step-icon,
+html[data-theme="dark"] #training .step h3{color:#f4f7fc;}
+html[data-theme="dark"] #training .step p{color:#aeb8c9;}
+html[data-theme="dark"] #training .step:nth-child(2) .step-icon{color:#91acff;}
+html[data-theme="dark"] #training .step:nth-child(3) .step-icon{color:#ff9f73;}
+html[data-theme="dark"] #training .step:nth-child(4) .step-icon{color:#63d6ad;}
+
+@media (max-width:600px){
+  #training .step{padding:20px;min-height:0;}
+  #training .step-icon{margin:16px 0 18px;}
+}
+</style>
 </head>
 <body>
 <div class="noise"></div>
@@ -574,7 +810,7 @@ main,section{max-width:100%;overflow-x:clip}
   <nav class="nav container">
     <a class="brand" href="#top"><span class="brand-mark">JS</span><span>J SHAKTHI SRAVANTH</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#approach">Approach</a></li><li><a href="#work">Work</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li>
+      <li><a href="#training">Training</a></li><li><a href="#approach">Method</a></li><li><a href="#experience">Experience</a></li><li><a href="#work">Engineering</a></li><li><a href="#skills">Skills</a></li>
     </ul>
     <div class="nav-controls">
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" title="Switch theme">
@@ -589,11 +825,11 @@ main,section{max-width:100%;overflow-x:clip}
 <section class="hero">
  <div class="container hero-grid">
   <div class="hero-copy reveal">
-   <div class="status"><span class="status-dot"></span> Backend Engineer · Technical Trainer</div>
-   <h1>I build the system.<br>I make it <span class="stroke">simple.</span></h1>
-   <p>I’m J Shakthi Sravanth. I engineer dependable Java backend applications and turn complex technology into clear, practical learning experiences.</p>
-   <div class="hero-actions"><a class="btn btn-primary" href="#work">Explore my work <span>↘</span></a><a class="btn btn-secondary" href="#approach">See how I teach</a></div>
-   <div class="micro-proof"><span><i></i>6,000+ learners mentored</span><span><i></i>Java & Spring Boot</span><span><i></i>Bengaluru, India</span></div>
+   <div class="status"><span class="status-dot"></span> Technical Trainer · Software Engineer</div>
+   <h1>I make technology <span class="stroke">simple.</span><br>Then I build it for real.</h1>
+   <p>I’m J Shakthi Sravanth—a Technical Trainer and Software Engineer who helps learners understand Java, DSA, SQL, Spring Boot, and backend development through structured explanations, guided practice, and real-world projects.</p>
+   <div class="hero-actions"><a class="btn btn-primary" href="#training">Explore my training impact <span>↘</span></a><a class="btn btn-secondary" href="#work">See my engineering work</a></div>
+   <div class="micro-proof"><span><i></i>6,000+ learners mentored</span><span><i></i>Java · DSA · SQL · Spring Boot</span><span><i></i>Project & interview mentoring</span></div>
   </div>
   <div class="clarity-board reveal" aria-label="Complexity to clarity diagram">
    <div class="board-top"><div class="board-title">The Code-to-Clarity Method</div><div class="board-icons"><span></span><span></span><span></span></div></div>
@@ -609,29 +845,42 @@ main,section{max-width:100%;overflow-x:clip}
   </div>
  </div>
 </section>
-<div class="impact-strip"><div class="container impact-grid"><div class="impact"><strong>6,000+</strong><span>Learners mentored</span></div><div class="impact"><strong>2+</strong><span>Years engineering + L&D</span></div><div class="impact"><strong>43</strong><span>GitHub repositories</span></div><div class="impact"><strong>2</strong><span>Roles, one mindset</span></div></div></div>
+<div class="impact-strip"><div class="container impact-grid"><div class="impact"><strong>6,000+</strong><span>Learners mentored</span></div><div class="impact"><strong>2+</strong><span>Years technical training + software</span></div><div class="impact"><strong>3,000+</strong><span>Learners mentored at KodNest</span></div><div class="impact"><strong>3,000+</strong><span>Learners trained at Pentagon</span></div></div></div>
+
+
+<section id="training">
+ <div class="container">
+  <div class="section-head reveal"><div class="kicker">Training highlights</div><div><h2>I help learners move from “I know the syntax” to “I can solve and build.”</h2><p class="section-intro">My focus is concept clarity, structured problem solving, hands-on implementation, and career readiness. Every learning experience is designed to create independent developers—not dependent note-takers.</p></div></div>
+  <div class="process-grid">
+   <article class="step reveal"><div class="step-num">01 / IMPACT</div><div class="step-icon">6K+</div><h3>6,000+ Learners Mentored</h3><p>Trained and guided learners across Java, DSA, SQL, J2EE, Spring, Spring Boot, REST APIs, and backend development.</p></article>
+   <article class="step reveal"><div class="step-num">02 / DESIGN</div><div class="step-icon">✦</div><h3>Curriculum & Content Design</h3><p>Create structured learning paths, coding labs, trainer scripts, assessments, practice sets, and placement-focused learning experiences.</p></article>
+   <article class="step reveal"><div class="step-num">03 / MENTOR</div><div class="step-icon">↗</div><h3>Projects & Problem Solving</h3><p>Guide learners from logic building to complete backend applications through debugging, code reviews, architecture, and practical implementation.</p></article>
+   <article class="step reveal"><div class="step-num">04 / CAREER</div><div class="step-icon">✓</div><h3>Interview & Placement Readiness</h3><p>Conduct technical screenings, mock interviews, coding practice, performance reviews, and targeted mentoring for job readiness.</p></article>
+  </div>
+ </div>
+</section>
 
 <section class="process" id="approach">
  <div class="container">
-  <div class="section-head reveal"><div class="kicker">My signature approach</div><div><h2>Complexity becomes useful only when it becomes clear.</h2><p class="section-intro">The same structured thinking guides both my backend engineering and my training. I do not simplify by removing depth—I make the depth understandable.</p></div></div>
+  <div class="section-head reveal"><div class="kicker">My approach</div><div><h2>Complexity becomes useful only when it becomes clear.</h2><p class="section-intro">The same structured thinking guides both my backend engineering and my training. I do not simplify by removing depth—I make the depth understandable.</p></div></div>
   <div class="process-grid">
-   <article class="step reveal"><div class="step-num">01 / OBSERVE</div><div class="step-icon">⌕</div><h3>Understand</h3><p>Identify the real requirement, hidden constraints, users, data, and expected outcome.</p></article>
-   <article class="step reveal"><div class="step-num">02 / DECOMPOSE</div><div class="step-icon">÷</div><h3>Break Down</h3><p>Convert one intimidating problem into smaller modules, decisions, and patterns.</p></article>
-   <article class="step reveal"><div class="step-num">03 / CONNECT</div><div class="step-icon">→</div><h3>Explain</h3><p>Use analogies, diagrams, examples, and reasoning so the idea becomes memorable.</p></article>
-   <article class="step reveal"><div class="step-num">04 / DELIVER</div><div class="step-icon">✓</div><h3>Build</h3><p>Turn understanding into clean code, reliable systems, and independent problem-solvers.</p></article>
+   <article class="step reveal"><div class="step-num">01 / OBSERVE</div><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path><path d="M8.5 11h5"></path><path d="M11 8.5v5"></path></svg></div><h3>Understand</h3><p>Identify the real requirement, hidden constraints, users, data, and expected outcome.</p></article>
+   <article class="step reveal"><div class="step-num">02 / DECOMPOSE</div><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"></rect><rect x="13" y="4" width="7" height="7" rx="1.5"></rect><rect x="4" y="13" width="7" height="7" rx="1.5"></rect><rect x="13" y="13" width="7" height="7" rx="1.5"></rect></svg></div><h3>Break Down</h3><p>Convert one intimidating problem into smaller modules, decisions, and patterns.</p></article>
+   <article class="step reveal"><div class="step-num">03 / CONNECT</div><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"></path><path d="M8 9h8"></path><path d="M8 12h5"></path></svg></div><h3>Explain</h3><p>Use analogies, diagrams, examples, and reasoning so the idea becomes memorable.</p></article>
+   <article class="step reveal"><div class="step-num">04 / DELIVER</div><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6 3.5 12 8 18"></path><path d="m16 6 4.5 6-4.5 6"></path><path d="m13.5 4-3 16"></path></svg></div><h3>Build</h3><p>Turn understanding into clean code, reliable systems, and independent problem-solvers.</p></article>
   </div>
  </div>
 </section>
 
 <section id="identity">
  <div class="container">
-  <div class="section-head reveal"><div class="kicker">Two perspectives</div><div><h2>One professional identity, viewed from two sides.</h2><p class="section-intro">Switch between the engineer and trainer perspective. Both are powered by the same strengths: structure, clarity, practical implementation, and ownership.</p></div></div>
-  <div class="perspective-controls"><button class="mode-btn active" data-panel="engineer">Engineer view</button><button class="mode-btn" data-panel="trainer">Trainer view</button></div>
-  <div class="perspective-panel active" id="engineer">
+  <div class="section-head reveal"><div class="kicker">One professional identity</div><div><h2>Technical Trainer first. Software Engineer by practice.</h2><p class="section-intro">My training is grounded in real software development, and my engineering is strengthened by the discipline of explaining systems clearly.</p></div></div>
+  <div class="perspective-controls"><button class="mode-btn active" data-panel="trainer">Trainer view</button><button class="mode-btn" data-panel="engineer">Software Engineer view</button></div>
+  <div class="perspective-panel" id="engineer">
    <article class="p-card dark reveal"><div class="p-label">What I engineer</div><h3>Reliable backend systems that turn business rules into working software.</h3><p>Java, Spring Boot, REST APIs, microservices, security, persistence, and relational database design.</p><div class="arch"><span>CLIENT</span><b>→</b><span>API</span><b>→</b><span>SERVICE</span><b>→</b><span>JPA</span><b>→</b><span>MYSQL</span></div></article>
    <article class="p-card reveal"><div class="p-label">Engineering mindset</div><h3>Not just “make it work.” Make it understandable, maintainable, and useful.</h3><p>I focus on clear domain models, modular services, deliberate API contracts, debugging, performance, and real-world workflows.</p></article>
   </div>
-  <div class="perspective-panel" id="trainer">
+  <div class="perspective-panel active" id="trainer">
    <article class="p-card orange reveal"><div class="p-label">What I develop</div><h3>Learning experiences that move students from confusion to confidence.</h3><p>Java, SQL, DSA, Spring Boot, backend projects, technical screening, mock interviews, and placement readiness.</p><div class="arch"><span>CONCEPT</span><b>→</b><span>EXAMPLE</span><b>→</b><span>PRACTICE</span><b>→</b><span>PROJECT</span><b>→</b><span>CAREER</span></div></article>
    <article class="p-card reveal"><div class="p-label">Training mindset</div><h3>I teach the decision-making behind the code—not only the final syntax.</h3><p>Every session is designed to help learners identify patterns, explain an approach, debug independently, and apply concepts in projects and interviews.</p></article>
   </div>
@@ -640,7 +889,7 @@ main,section{max-width:100%;overflow-x:clip}
 
 <section id="work">
  <div class="container">
-  <div class="section-head reveal"><div class="kicker">Selected systems</div><div><h2>Projects presented as problems solved—not technology lists.</h2></div></div>
+  <div class="section-head reveal"><div class="kicker">Software engineering</div><div><h2>Real systems that keep my training practical and industry-connected.</h2><p class="section-intro">I continue to design and build backend applications so the concepts I teach remain grounded in working software, real architecture, and realistic engineering decisions.</p></div></div>
   <div class="projects-grid">
    <article class="project featured reveal"><div class="project-top"><span class="project-num">01 / DISTRIBUTED BACKEND</span><span class="project-arrow">↗</span></div><div class="project-visual"><div class="microservice-map"><span>USER<br>SERVICE</span><span>POST<br>SERVICE</span><span>COMMENT<br>SERVICE</span><span>NOTIFICATION<br>SERVICE</span></div></div><h3>Social Media Microservices Platform</h3><p>Designed independent services for users, posts, comments, messages, and notifications, connected through service discovery and an API gateway.</p><div class="tags"><span>SPRING BOOT</span><span>EUREKA</span><span>FEIGN</span><span>JWT</span><span>MYSQL</span></div></article>
    <article class="project reveal"><div class="project-top"><span class="project-num">02 / CAREERTECH</span><span class="project-arrow">↗</span></div><h3>Student Job-Matching Platform</h3><p>Transforms learner ratings, technical skills, course data, and job requirements into searchable shortlists and ranked matches.</p><div class="tags"><span>JAVA</span><span>SPRING BOOT</span><span>JPA</span><span>THYMELEAF</span></div></article>
@@ -651,7 +900,7 @@ main,section{max-width:100%;overflow-x:clip}
 
 <section id="experience">
  <div class="container">
-  <div class="section-head reveal"><div class="kicker">Experience</div><div><h2>Building software, learning systems, and stronger engineers.</h2></div></div>
+  <div class="section-head reveal"><div class="kicker">Professional journey</div><div><h2>Training thousands of learners while continuing to build software.</h2></div></div>
   <div class="timeline">
    <article class="role reveal"><div><div class="role-date">NOV 2025 — PRESENT</div><div class="role-company">KodNest Technologies</div></div><div><h3>Growth Partner — Learning & Development</h3><p>Mentoring 3,000+ learners across Java, DSA, SQL, Spring Boot, backend development, and interview preparation.</p><ul><li>Design industry-aligned curricula, coding labs, assessments, and trainer scripts.</li><li>Conduct screenings, mock interviews, and performance evaluations.</li><li>Build internal learning tools, automation workflows, and backend features.</li><li>Guide learners through debugging, projects, and placement readiness.</li></ul></div></article>
    <article class="role reveal"><div><div class="role-date">JUN 2024 — OCT 2025</div><div class="role-company">Pentagon Space</div></div><div><h3>Technical Trainer & Software Engineer</h3><p>Developed full-stack applications while training 3,000+ students in Java backend technologies.</p><ul><li>Built applications using Java, Spring Boot, React, REST APIs, and SQL.</li><li>Improved backend performance through caching, indexing, and query tuning.</li><li>Delivered project-based workshops on APIs and backend architecture.</li><li>Prepared learners for assessments, projects, and placements.</li></ul></div></article>
@@ -661,7 +910,7 @@ main,section{max-width:100%;overflow-x:clip}
 
 <section id="skills">
  <div class="container skills-wrap">
-  <div class="skills-copy reveal"><div class="kicker">Technical toolkit</div><h2 style="margin-top:22px">Depth to build.<br>Clarity to teach.</h2><p>My toolkit connects backend engineering, problem solving, product thinking, and technical learning design.</p></div>
+  <div class="skills-copy reveal"><div class="kicker">Trainer + engineer toolkit</div><h2 style="margin-top:22px">Clarity to teach.<br>Depth to build.</h2><p>My strongest capabilities combine technical training, curriculum design, mentoring, Java backend engineering, and placement-focused problem solving.</p></div>
   <div class="skill-board">
    <article class="skill-group reveal"><h3>Backend Engineering</h3><div><span>Java</span><span>Java 8</span><span>J2EE</span><span>Spring</span><span>Spring Boot</span><span>Microservices</span></div></article>
    <article class="skill-group reveal"><h3>APIs & Persistence</h3><div><span>REST APIs</span><span>JPA</span><span>Hibernate</span><span>JDBC</span><span>MySQL</span><span>Oracle SQL</span></div></article>
@@ -677,12 +926,12 @@ main,section{max-width:100%;overflow-x:clip}
 
 <section class="contact" id="contact">
  <div class="container contact-grid">
-  <div class="reveal"><div class="kicker">Let’s connect</div><h2 style="margin-top:22px">Building something worth solving—or teaching?</h2><p class="contact-note">Open to backend engineering roles, technical training, curriculum design, L&D collaborations, and meaningful technology conversations.</p></div>
+  <div class="reveal"><div class="kicker">Let’s connect</div><h2 style="margin-top:22px">Building something worth solving—or teaching?</h2><p class="contact-note">Open to technical training, learning and development, curriculum design, trainer enablement, Java backend mentoring, and software engineering opportunities.</p></div>
   <div class="contact-links reveal"><a class="contact-link" href="mailto:shakthisravanth001@gmail.com"><span>Email</span><span>↗</span></a><a class="contact-link" href="https://www.linkedin.com/in/shakthisravanth" target="_blank" rel="noopener"><span>LinkedIn</span><span>↗</span></a><a class="contact-link" href="https://github.com/shakthisravanth" target="_blank" rel="noopener"><span>GitHub</span><span>↗</span></a><a class="contact-link" href="tel:+919014725501"><span>Phone</span><span>↗</span></a></div>
  </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span>J SHAKTHI SRAVANTH © 2026</span><span>BACKEND ENGINEER · TECHNICAL TRAINER · BENGALURU</span></div></footer>
+<footer><div class="container footer-row"><span>J SHAKTHI SRAVANTH © 2026</span><span>TECHNICAL TRAINER · SOFTWARE ENGINEER · BENGALURU</span></div></footer>
 <script>
 (() => {
   const menu = document.getElementById('menu');
